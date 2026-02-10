@@ -12,24 +12,24 @@
                 Student Registration Form
             </h1>
         </header>
-        <form action="" method="get" autocomplete="on"> <!-- Since action is omitted, the action is set to the current page -->
-            <!-- get method is used since no sensitive data like passwords is being submitted through the form -->
+        <form action="" method="post" autocomplete="on"> <!-- Since action is omitted, the action is set to the current page -->
             <fieldset>
                 <legend>Personalia</legend>
                 <label for="fname">FirstName:</label><br>
-            <input type="text" name="fname" placeholder="John" required><br>
+            <input type="text" id="fname" name="fname" placeholder="John" required><br>
             <label for="lname">LastName:</label><br>
-            <input type="text" name="lname" placeholder="Doe" required><br>
+            <input type="text" id="lname" name="lname" placeholder="Doe" required><br>
             <label for="DOB">Date of Birth</label><br>
             <input type="date" id="dob" name="dob" max="2012-12-31" required><br>
             <label for="rnumber">Registration No:</label><br>
-            <input type="text" name="rnumber" inputmode="numeric" required><br>
-            <input type="radio" name="gender">
+            <input type="text" name="rnumber" inputmode="numeric" pattern="STU-[O-9]{4}-[0-9]{4}" placeholder="STU-2014-1024" required><br>
+
+            <input type="radio" id="male" name="gender" value="male">
             <label for="male">Male</label>
-            <input type="radio" name="gender">
+            <input type="radio" name="gender" id="male" value="male">
             <label for="female">Female</label><br>
             <label for="email">Email:</label><br>
-            <input type="email" name="email" placeholder="johndoe@email.com" inputmode="email"><br> <!-- Learnt the inputmode attribute from Gemini when I was learning aabout forms for the first time -->
+            <input type="email" name="email" placeholder="johndoe@email.com" inputmode="email" id="email"><br> <!-- Learnt the inputmode attribute from Gemini when I was learning aabout forms for the first time -->
             
             </fieldset>
             <input type="checkbox" id="course1" name="course1" value="HTML Course">
@@ -46,14 +46,14 @@
                 <option value="Tennis">Tennis</option>
                 <option value="Badminton">Bandminton</option>
             </select><br>
-            <textarea name="message" id="message" rows="10" col="50">
-                Add any comments
+            <textarea name="message" id="message" rows="10" cols="30" placeholder="Add any comments">
+                
             </textarea><br>
             <label for="file">Upload Admission Letter</label><br>
-            <input type="file" id="admfile" name="admfile"><br> <!-- Should be a required field but I didn't want to select a file everytime I tested the form inputs at the submit section -->
+            <input type="file" id="admfile" name="admfile"><br> 
             <label for="hostel">Hostel No:</label>
             <input type="hidden" id="hostelno" name="hostelno" value="104"><br>
-            <input type="submit" value="submit" onclick="alert('Submitted Successfully!')">
+            <input type="submit" value="submit">
             <input type="reset" value="reset">
         </form>
         <!-- I didn't add disabled attribute because I don't understand why we should have an input field that will be ignored by both the user and the server -->
